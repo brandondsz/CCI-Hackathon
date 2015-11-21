@@ -4,6 +4,9 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans+SC);
+
 body,
 html {
     width: 100%;
@@ -32,7 +35,7 @@ h6 {
 
 .intro-header {
     /*padding-top: 50px;*/ /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 	margin-top: -201px;
     text-align: center;
     color: #f8f8f8;
@@ -43,7 +46,7 @@ h6 {
 .intro-message {
     position: relative;
     padding-top: 20%;
-    padding-bottom: 20%;
+    padding-bottom: 1%;
 }
 .intro-message img{margin-left: 20px;}
 
@@ -96,7 +99,6 @@ h6 {
 
 .content-section-a {
     padding: 50px 0;
-    background-color: #f8f8f8;
 }
 
 .content-section-b {
@@ -185,3 +187,85 @@ p.copyright {
 .highlight{
 	background:#f0f4dd;
 }
+
+
+.btn-circle {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 2px solid #5e3c3d;
+    border-radius: 100% !important;
+    color: #5e3c3d;
+    font-size: 40px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    transition: background 0.3s ease-in-out 0s;
+    width: 70px;
+}
+.btn-circle:hover, .btn-circle:focus {
+    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+	border: 2px solid #000;
+    color: #000;
+    outline: 0 none;
+}
+.btn-circle i.animated {
+    transition-duration: 1s;
+    transition-property: -moz-transform;
+}
+.btn-circle:hover i.animated {
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+    animation-timing-function: linear;
+}
+#links{margin:5em 0 3em;}
+#links .link{background: rgba(44, 18, 19, 0.5) none repeat scroll 0 0;
+    border-radius: 250px;
+    color: #fff;
+    display: block;
+    font-family: "Lobster";
+    font-size: 32px;
+    font-weight: 100;
+    height: 210px;
+    margin: 0;
+    padding: 55px 24px;
+    text-align: center;}
+#links .link{background: rgba(44, 18, 19, 0.5) none repeat scroll 0 0;text-shadow: 1px 1px 1px #4e2b2c;}
+#links .link:hover, #links .link:focus{text-decoration:none;color:#ffd579;background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;}
+#links .create-btn{}
+#links .upload-btn{}
+#links .build-btn{}
+
+/* Inner Pages */
+.inner nav{background: #f0ece3 none repeat scroll 0 0;
+    height: 95px;}
+.inner .liner{background: rgba(0, 0, 0, 0) url("../images/top-triang.png") repeat-x scroll 0 0;
+    height: 13px;
+    width: 100%;}
+.page-header{background: rgba(0, 0, 0, 0) url("../images/line.png") no-repeat scroll center bottom / 60% auto;
+    border: 0 none;
+    height: 90px;
+    text-align: center;margin-bottom: 4em;}
+.page-header h1{color: #5e3c3d;
+    font-family: "Lobster";
+    font-size: 43px;
+    text-align: center;
+    text-shadow: 0 3px 1px #d4d0d0;}
+	
+#cake_maker{background: #f2eadc none repeat scroll 0 0;
+    border-radius: 10px;
+    margin-right: 110px;
+    padding: 10px 30px;}
+#cake_maker h3{font-family:'Alegreya Sans SC';color:#5e3c3d;}
+#cake_maker .lead{color: #ab7704;}
+#cake_maker .list-unstyled li{margin: 10px 0;}
+#cake_maker .list-unstyled li input{margin-right: 10px;}
+#cake_maker .btn{background: #5e3c3d none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 0;
+    color: #fff;
+    font-family: "Alegreya Sans SC";
+    font-size: 18px;
+    margin: 10px 10px 10px 0;
+    padding: 10px 0;
+    width: 150px;}
+#cake_maker .btn:hover{background:#7f5804;}
