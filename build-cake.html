@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-xs-7">
                     <div id="cake_maker">
-                        <div id="step1">
+                        <div id="step1" class="step">
                         	<h3 class="h3underline">Step 1 - Choose your fillings</h3>
                         	<p class="lead">Type of Filling</p>
                             <ul>
@@ -57,7 +57,7 @@
                             </ul>
                         </div>   
                         
-                        <div id="step2">
+                        <div id="step2" class="step">
                         	<h3 class="h3underline">Step 2 - Decoration</h3>
                         	<p class="lead">Decoration Areas</p>
                             <ul>
@@ -69,7 +69,7 @@
                             </ul>
                         </div> 
                         
-                        <div id="step3">
+                        <div id="step3" class="step">
                         	<h3 class="h3underline">Step 3 - Finishing Touches</h3>
                         	<p class="lead">Type of Filling</p>
                             <ul>
@@ -81,7 +81,7 @@
                             </ul>
                         </div>
                         
-                        <div id="step4">
+                        <div id="step4" class="step">
                         	<h3 class="h3underline">Finally Your Cake is Ready</h3>
                             <ul>
                             	<li><strong>Filling Choice:</strong>  <span class="text-warning">Vanilla</span></li>
@@ -95,10 +95,10 @@
                               </div>
                               
                              <div class="form-group">
-                                <input name="" type="checkbox" value="" checked> Available for Bidding
+                                <input id="availabe-for-bid" name="" type="checkbox" value="" checked> Available for Bidding
                                 <div class="clearfix"></div>
                                 <button id="bid-btn" class="btn btn-success">Request a Bid</button>
-                                <button id="place-order" class="btn btn-success">Place an Order</button>
+                                <button id="place-order" class="btn btn-success" style="display:none">Place an Order</button>
                               </div> 
                               
                                   
@@ -106,8 +106,8 @@
                         </div>
 					</div>
                     
-                    <button type="submit" class="btn btn-default">Cancel</button>
-                    <button type="submit" class="btn btn-default">Next</button>
+                    <button type="submit" class="btn btn-default" id="back">Back</button>
+                    <button type="submit" class="btn btn-default" id="next" >Next</button>
                 </div>
                 
                 <div class="col-xs-5 cake-imgs">
@@ -125,7 +125,33 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+<script>
+var currentPage=1;
 
+$(document).ready(function(){
+ShowNext(currentPage);
+});
+function ShowNext(x){
+$('.step').hide();
+$('#step'+x).show();
+}
+$('#back').click(function(){
+if(currentPage>1){
+	currentPage=currentPage-1;
+	ShowNext(currentPage);
+}
+});
+$('#next').click(function(){
+if(currentPage<4){
+	currentPage=currentPage+1;
+	ShowNext(currentPage);
+}});
+
+$('#availabe-for-bid').change(function(){
+	$('#bid-btn').toggle();
+	$('#place-order').toggle();
+});
+</script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
