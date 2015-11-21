@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="text-center" role="navigation">
         <div class="container topnav">
-        	<a href="#"><img src="images/logo.png"/></a>
+        	<a href="index.html"><img src="images/logo.png"/></a>
         </div>
         <!-- /.container -->
     </nav>
@@ -95,18 +95,18 @@
                               </div>
                               
                              <div class="form-group">
-                                <input id="availabe-for-bid" name="" type="checkbox" value="" checked> Available for Bidding
-                                <div class="clearfix"></div>
+								
                                 <button id="bid-btn" class="btn btn-success">Request a Bid</button>
-                                <button id="place-order" class="btn btn-success" style="display:none">Place an Order</button>
+                                <button id="place-order" class="btn btn-success" >Place an Order</button>	
+								<button class="btn btn-default btn-small" id="change">Back</button>								
                               </div> 
                               
                                   
                                   
                         </div>
                         
-                        <button type="submit" class="btn btn-default" id="back">Back</button>
-                    <button type="submit" class="btn btn-default" id="next" >Next</button>
+						<button type="submit" class="btn btn-default" id="back">Back</button>
+						<button type="submit" class="btn btn-default" id="next" >Next</button>
 					</div>
                     
                     
@@ -155,7 +155,15 @@ $('#next').click(function(){
 		currentPage=currentPage+1;
 		ShowNext(currentPage);
 	}
+	if(currentPage==4){
+		$('#back,#next').hide();
+	}
 });
+$('#change').click(function(){
+	currentPage=currentPage-1;
+	ShowNext(currentPage);
+});
+
 $('.step1-radio').click(function(){
 	$('#filling-img').attr("src",'images/filling'+$('.step1-radio:checked').val()+'.png');
 	$('#filling').html(fillingList[$('.step1-radio:checked').val()]);
@@ -168,10 +176,7 @@ $('.step3-radio').click(function(){
 	$('#ribbon-img').attr("src",'images/ribbon'+$('.step3-radio:checked').val()+'.png');
 	$('#ribbon').html(ribbonList[$('.step3-radio:checked').val()]);
 });
-$('#availabe-for-bid').change(function(){
-	$('#bid-btn').toggle();
-	$('#place-order').toggle();
-});
+
 </script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
