@@ -49,11 +49,11 @@
                         	<h3 class="h3underline">Step 1 - Choose your fillings</h3>
                         	<p class="lead">Type of Filling</p>
                             <ul>
-                            	<li><input name="" type="checkbox" value=""> Chocolate</li>
-                                <li><input name="" type="checkbox" value=""> Vanilla</li>
-                                <li><input name="" type="checkbox" value=""> Strawberry</li>
-                                <li><input name="" type="checkbox" value=""> Blueberry</li>
-                                <li><input name="" type="checkbox" value=""> Butterscotch</li>
+                            	<li><input class="step1-radio" name="step1-radio" type="radio" value="0"> Chocolate</li>
+                                <li><input class="step1-radio" name="step1-radio" type="radio" value="1"> Vanilla</li>
+                                <li><input class="step1-radio" name="step1-radio" type="radio" value="2"> Strawberry</li>
+                                <li><input class="step1-radio" name="step1-radio" type="radio" value="3"> Blueberry</li>
+                                <li><input class="step1-radio" name="step1-radio" type="radio" value="4"> Butterscotch</li>
                             </ul>
                         </div>   
                         
@@ -61,32 +61,32 @@
                         	<h3 class="h3underline">Step 2 - Decoration</h3>
                         	<p class="lead">Decoration Areas</p>
                             <ul>
-                            	<li><input name="" type="checkbox" value=""> Top Decoration with Strawberries on top</li>
-                                <li><input name="" type="checkbox" value=""> Top Decoration with Chocolate chips on top</li>
-                                <li><input name="" type="checkbox" value=""> Side Decoration with Strawberries on the side</li>
-                                <li><input name="" type="checkbox" value=""> Side Decoration with Chocolate Chips on the side</li>
-                                <li><input name="" type="checkbox" value=""> Top & Side Decoration with Exotic Fruits</li>
+                            	<li><input class="step2-radio" name="step2-radio" type="radio" value="0"> Top Decoration with Strawberries on top</li>
+                                <li><input class="step2-radio" name="step2-radio" type="radio" value="1"> Top Decoration with Chocolate chips on top</li>
+                                <li><input class="step2-radio" name="step2-radio" type="radio" value="2"> Side Decoration with Strawberries on the side</li>
+                                <li><input class="step2-radio" name="step2-radio" type="radio" value="3"> Side Decoration with Chocolate Chips on the side</li>
+                                <li><input class="step2-radio" name="step2-radio" type="radio" value="4"> Top & Side Decoration with Exotic Fruits</li>
                             </ul>
                         </div> 
                         
                         <div id="step3" class="step">
                         	<h3 class="h3underline">Step 3 - Finishing Touches</h3>
-                        	<p class="lead">Type of Filling</p>
+                        	<p class="lead">Type of Ribbon</p>
                             <ul>
-                            	<li><input name="" type="checkbox" value=""> Add a Red Ribbon</li>
-                                <li><input name="" type="checkbox" value=""> Add a Blue Ribbon</li>
-                                <li><input name="" type="checkbox" value=""> Add a Pink Ribbon</li>
-                                <li><input name="" type="checkbox" value=""> Add a Green Ribbon</li>
-                                <li><input name="" type="checkbox" value=""> Add a Yellow Ribbon</li>
+                            	<li><input class="step3-radio" name="step3-radio" type="radio" value="0"> Add a Red Ribbon</li>
+                                <li><input class="step3-radio" name="step3-radio" type="radio" value="1"> Add a Blue Ribbon</li>
+                                <li><input class="step3-radio" name="step3-radio" type="radio" value="2"> Add a Pink Ribbon</li>
+                                <li><input class="step3-radio" name="step3-radio" type="radio" value="3"> Add a Green Ribbon</li>
+                                <li><input class="step3-radio" name="step3-radio" type="radio" value="4"> Add a Yellow Ribbon</li>
                             </ul>
                         </div>
                         
                         <div id="step4" class="step">
                         	<h3 class="h3underline">Finally Your Cake is Ready</h3>
                             <ul>
-                            	<li><strong>Filling Choice:</strong>  <span class="text-warning">Vanilla</span></li>
-                                <li><strong>Choice of Decoration:</strong>  <span class="text-warning">Side Decoration with Chocolate Chips on the side</span></li>
-                                <li><strong>Ribbon:</strong>  <span class="text-warning">Red</span></li>
+                            	<li><strong>Filling Choice:</strong>  <span id="filling" class="text-warning"></span></li>
+                                <li><strong>Choice of Decoration:</strong>  <span id="decoration" class="text-warning"></span></li>
+                                <li><strong>Ribbon:</strong>  <span id="ribbon" class="text-warning"></span></li>
                             </ul>
                             
                             <div class="form-group">
@@ -112,7 +112,9 @@
                 
                 <div class="col-xs-5 cake-imgs">
                    <div class="cake-preview">
-                   		<img src="images/chocolateTop.png" class="img-responsive" />
+                   		<img id="filling-img" src="images/cake1.png" class="img-responsive" />
+						<img id="decoration-img" src="images/cake.png" class="img-responsive" />
+						<img id="ribbon-img" src="images/cake.png" class="img-responsive" />
                    </div>
                 </div>
             </div>
@@ -127,26 +129,43 @@
     <script src="js/jquery.js"></script>
 <script>
 var currentPage=1;
+var fillingList=["Chocolate","Vanilla","Strawberry","Blueberry","Butterscotch"]
+var decorationList=["Top Decoration with Strawberries on top"," Top Decoration with Chocolate chips on top","Side Decoration with Strawberries on the side","Side Decoration with Chocolate Chips on the side","Top & Side Decoration with Exotic Fruits"];
+var ribbonList=["Red","Blue","Pink","Green","Yellow"];
 
 $(document).ready(function(){
 ShowNext(currentPage);
 });
+
 function ShowNext(x){
 $('.step').hide();
+
 $('#step'+x).show();
 }
 $('#back').click(function(){
-if(currentPage>1){
-	currentPage=currentPage-1;
-	ShowNext(currentPage);
-}
+	if(currentPage>1){
+		currentPage=currentPage-1;
+		ShowNext(currentPage);
+	}
 });
 $('#next').click(function(){
-if(currentPage<4){
-	currentPage=currentPage+1;
-	ShowNext(currentPage);
-}});
-
+	if(currentPage<4){
+		currentPage=currentPage+1;
+		ShowNext(currentPage);
+	}
+});
+$('.step1-radio').click(function(){
+	$('#filling-img').attr("src",'images/filling'+$('.step1-radio:checked').val()+'.png');
+	$('#filling').html(fillingList[$('.step1-radio:checked').val()]);
+});
+$('.step2-radio').click(function(){
+	$('#decoration-img').attr("src",'images/decoration'+$('.step2-radio:checked').val()+'.png');
+	$('#decoration').html(decorationList[$('.step2-radio:checked').val()]);
+});
+$('.step3-radio').click(function(){
+	$('#ribbon-img').attr("src",'images/ribbon'+$('.step3-radio:checked').val()+'.png');
+	$('#ribbon').html(ribbonList[$('.step3-radio:checked').val()]);
+});
 $('#availabe-for-bid').change(function(){
 	$('#bid-btn').toggle();
 	$('#place-order').toggle();
