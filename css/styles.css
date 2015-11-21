@@ -237,7 +237,8 @@ p.copyright {
 
 /* Inner Pages */
 .inner nav{background: #f0ece3 none repeat scroll 0 0;
-    height: 95px;}
+    height: 65px;}
+.inner img{width:150px;}
 .inner .liner{background: rgba(0, 0, 0, 0) url("../images/top-triang.png") repeat-x scroll 0 0;
     height: 13px;
     width: 100%;}

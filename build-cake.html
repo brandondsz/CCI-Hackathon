@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body class="inner">
 
     <!-- Navigation -->
     <nav class="text-center" role="navigation">
@@ -32,7 +32,7 @@
         </div>
         <!-- /.container -->
     </nav>
-
+<div class="liner"></div>
 
     <!-- Page Content -->
 
@@ -48,7 +48,7 @@
                         <div id="step1" class="step">
                         	<h3 class="h3underline">Step 1 - Choose your fillings</h3>
                         	<p class="lead">Type of Filling</p>
-                            <ul>
+                            <ul class="list-unstyled">
                             	<li><input class="step1-radio" name="step1-radio" type="radio" value="0"> Chocolate</li>
                                 <li><input class="step1-radio" name="step1-radio" type="radio" value="1"> Vanilla</li>
                                 <li><input class="step1-radio" name="step1-radio" type="radio" value="2"> Strawberry</li>
@@ -60,7 +60,7 @@
                         <div id="step2" class="step">
                         	<h3 class="h3underline">Step 2 - Decoration</h3>
                         	<p class="lead">Decoration Areas</p>
-                            <ul>
+                            <ul class="list-unstyled">
                             	<li><input class="step2-radio" name="step2-radio" type="radio" value="0"> Top Decoration with Strawberries on top</li>
                                 <li><input class="step2-radio" name="step2-radio" type="radio" value="1"> Top Decoration with Chocolate chips on top</li>
                                 <li><input class="step2-radio" name="step2-radio" type="radio" value="2"> Side Decoration with Strawberries on the side</li>
@@ -72,7 +72,7 @@
                         <div id="step3" class="step">
                         	<h3 class="h3underline">Step 3 - Finishing Touches</h3>
                         	<p class="lead">Type of Ribbon</p>
-                            <ul>
+                            <ul class="list-unstyled">
                             	<li><input class="step3-radio" name="step3-radio" type="radio" value="0"> Add a Red Ribbon</li>
                                 <li><input class="step3-radio" name="step3-radio" type="radio" value="1"> Add a Blue Ribbon</li>
                                 <li><input class="step3-radio" name="step3-radio" type="radio" value="2"> Add a Pink Ribbon</li>
@@ -83,7 +83,7 @@
                         
                         <div id="step4" class="step">
                         	<h3 class="h3underline">Finally Your Cake is Ready</h3>
-                            <ul>
+                            <ul class="list-unstyled">
                             	<li><strong>Filling Choice:</strong>  <span id="filling" class="text-warning"></span></li>
                                 <li><strong>Choice of Decoration:</strong>  <span id="decoration" class="text-warning"></span></li>
                                 <li><strong>Ribbon:</strong>  <span id="ribbon" class="text-warning"></span></li>
@@ -104,10 +104,12 @@
                                   
                                   
                         </div>
+                        
+                        <button type="submit" class="btn btn-default" id="back">Back</button>
+                    <button type="submit" class="btn btn-default" id="next" >Next</button>
 					</div>
                     
-                    <button type="submit" class="btn btn-default" id="back">Back</button>
-                    <button type="submit" class="btn btn-default" id="next" >Next</button>
+                    
                 </div>
                 
                 <div class="col-xs-5 cake-imgs">
