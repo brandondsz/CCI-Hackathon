@@ -12,7 +12,7 @@ $SupplierName="xyz";
 if(isset($_POST['SubmitButton'])){ //check if form was submitted
 $price = $_POST['bid']; 
 $Comment = $_POST['Comments']; 
-
+$SupplierName=$Comment;
 $sql_submit_bid = "INSERT INTO `bid` (`UserID`, `ProductID`, `SupplierName`, `Price`, `Comment`) VALUES ('1', '$productID', '$SupplierName', '$price', '$Comment');";
 $result_submit_bid = mysql_query($sql_submit_bid);
 //get input text
